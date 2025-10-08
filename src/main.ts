@@ -4,9 +4,8 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Enable CORS for cross-origin clients (e.g., frontend on a different port)
   app.enableCors({
-    origin: true, // Reflect request origin in dev; set specific origins in prod via options
+    origin: true,
     credentials: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   });
